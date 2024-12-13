@@ -1,5 +1,5 @@
 1. Traffic Light
-    https://codesandbox.io/p/sandbox/sleepy-cookies-2jvkgk?file=%2Fsrc%2FTrafficLight.jsx%3A44%2C1
+    https://codesandbox.io/p/sandbox/traffic-light-2jvkgk
 
 2. Toast
     
