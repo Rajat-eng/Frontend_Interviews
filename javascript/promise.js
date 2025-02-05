@@ -42,8 +42,9 @@ function polyfill(executor) {
     error;
   function resolve(val) {
     isFulfilled = true;
-    value = val;
+    value = val;// for sync we store value first
     if (typeof onResolve === "function" && !isCalled) {
+      // for async operation thenHanlder is already registered
       onResolve(val);
       isCalled = true;
     }
@@ -59,6 +60,7 @@ function polyfill(executor) {
   this.then = function (thenHandler) {
     onResolve = thenHandler;
     if (!isCalled && isFulfilled) {
+      // for sync value is already registered .. thenHandler resolves this value
       onResolve(value);
       isCalled = true;
     }
