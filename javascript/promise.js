@@ -45,6 +45,7 @@ function polyfill(executor) {
     value = val;// for sync we store value first
     if (typeof onResolve === "function" && !isCalled) {
       // for async operation thenHanlder is already registered
+      // we need thenHandler bcoz onresolve is called after timeout
       onResolve(val);
       isCalled = true;
     }
